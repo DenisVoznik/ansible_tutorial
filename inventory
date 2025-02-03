@@ -1,3 +1,8 @@
-srv1@orb
-srv2@orb
+[servers]
+srv1@orb ansible_user=ubuntu
+srv2@orb ansible_user=ubuntu
+
+# [amazon]
+# 18.199.152.220 ansible_user=ec2-user ansible_ssh_private_key_file=~/.ssh/denis-key-Frankfurt.pem
+
 
