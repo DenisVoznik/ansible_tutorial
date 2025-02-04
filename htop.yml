@@ -1,0 +1,12 @@
+---
+
+- name: Install htop
+  hosts: fedora@orb
+  become: true
+
+  tasks:
+  - name: Install htop package
+    dnf:
+      name: htop
+      state: present
+
