@@ -1,12 +1,21 @@
 ---
 
 - name: Install htop
-  hosts: fedora@orb
+  hosts: mini
   become: true
 
   tasks:
-  - name: Install htop package
+  - name: Install htop package (Fedora)
     dnf:
       name: htop
-      state: present
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "Fedora"
 
+  
+  - name: Install htop package (Ubuntu)
+    apt:
+      name: htop
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"

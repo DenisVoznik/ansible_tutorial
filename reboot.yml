@@ -1,0 +1,7 @@
+---
+
+- name: Reboot Servers
+  become: true
+  hosts: all
+  tasks:
+    - reboot:

@@ -1,0 +1,14 @@
+---
+
+- hosts: amazon
+  become: true
+  tasks:
+
+  - name: update apt
+    ansible.builtin.apt:
+      update_cache: yes
+
+  - name: install mariadb package (Ubuntu)
+    apt:
+      name: mariadb-server
+      state: latest
